@@ -1,11 +1,9 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import {
   LayoutGrid, Armchair, Pencil, Lamp, DoorOpen, Hammer,
   Bed, Sofa, Building2, Home, Tv, TreePine, Clock, CheckCircle, Star
 } from 'lucide-react';
-import serviceImages from '@/lib/images';
 
 const services = [
   {
@@ -158,29 +156,22 @@ export default function ServicesList() {
   return (
     <section className="py-20 bg-premium-white">
       <div className="container-custom">
-        <div className="space-y-16">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              className="bg-cream p-8 lg:p-12"
-            >
+        <div className="space-y-16 stagger-children">
+          {services.map((service) => (
+            <div key={service.title} className="bg-cream p-8 lg:p-12">
               <div className="grid lg:grid-cols-2 gap-10">
                 {/* Left - Icon & Info */}
                 <div>
-                  <div className="w-20 h-20 bg-luxury-dark flex items-center justify-center mb-6">
-                    <service.icon className="w-10 h-10 text-luxury-gold" />
+                  <div className="w-20 h-20 bg-[#111827] flex items-center justify-center mb-6">
+                    <service.icon className="w-10 h-10 text-[#C8A97E]" />
                   </div>
-                  <h3 className="font-outfit text-2xl sm:text-3xl font-bold text-luxury-dark mb-4">
+                  <h3 className="font-outfit text-2xl sm:text-3xl font-bold text-[#111827] mb-4">
                     {service.title}
                   </h3>
-                  <p className="text-text-muted text-lg mb-6">
+                  <p className="text-[#6B7280] text-lg mb-6">
                     {service.description}
                   </p>
-                  <div className="flex items-center gap-2 text-luxury-gold font-medium">
+                  <div className="flex items-center gap-2 text-[#C8A97E] font-medium">
                     <Clock className="w-5 h-5" />
                     <span>Est. Time: {service.timing}</span>
                   </div>
@@ -189,22 +180,22 @@ export default function ServicesList() {
                 {/* Right - Benefits */}
                 <div className="space-y-6">
                   <div>
-                    <h4 className="font-outfit font-semibold text-lg text-luxury-dark mb-4 flex items-center gap-2">
-                      <CheckCircle className="w-5 h-5 text-luxury-gold" />
+                    <h4 className="font-outfit font-semibold text-lg text-[#111827] mb-4 flex items-center gap-2">
+                      <CheckCircle className="w-5 h-5 text-[#C8A97E]" />
                       Why Choose Us
                     </h4>
                     <ul className="space-y-3">
                       {service.benefits.map((benefit) => (
                         <li key={benefit} className="flex items-start gap-3">
-                          <Star className="w-5 h-5 text-luxury-gold flex-shrink-0 mt-0.5" />
-                          <span className="text-text-muted">{benefit}</span>
+                          <Star className="w-5 h-5 text-[#C8A97E] flex-shrink-0 mt-0.5" />
+                          <span className="text-[#6B7280]">{benefit}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

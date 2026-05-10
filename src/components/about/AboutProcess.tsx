@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 const steps = [
   {
     number: '01',
@@ -32,42 +30,30 @@ const steps = [
 
 export default function AboutProcess() {
   return (
-    <section className="py-20 lg:py-32 bg-cream">
+    <section className="py-20 lg:py-32 bg-[#F5F0E8]">
       <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <div className="gold-line-center mb-6" />
-          <span className="inline-block px-4 py-2 bg-luxury-gold/10 text-luxury-gold font-semibold text-sm tracking-wider uppercase mb-4">
+        <div className="text-center mb-16 animate-fadeIn">
+          <div className="w-16 h-0.5 bg-[#C8A97E] mx-auto mb-6" />
+          <span className="inline-block px-4 py-2 bg-[#C8A97E]/10 text-[#C8A97E] font-semibold text-sm tracking-wider uppercase mb-4">
             Our Process
           </span>
-          <h2 className="section-heading">
+          <h2 className="font-outfit text-4xl lg:text-5xl font-bold text-[#111827] leading-tight">
             From Concept to <span className="text-gradient-luxury">Completion</span>
           </h2>
-        </motion.div>
+        </div>
 
-        <div className="grid md:grid-cols-5 gap-6">
+        <div className="grid md:grid-cols-5 gap-6 stagger-children">
           {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="relative"
-            >
+            <div key={step.number} className="relative">
               <div className="bg-white p-6 h-full">
-                <span className="font-outfit text-5xl font-bold text-luxury-gold/20">{step.number}</span>
-                <h3 className="font-outfit font-semibold text-lg text-luxury-dark mt-4 mb-3">{step.title}</h3>
-                <p className="text-text-muted text-sm">{step.description}</p>
+                <span className="font-outfit text-5xl font-bold text-[#C8A97E]/20">{step.number}</span>
+                <h3 className="font-outfit font-semibold text-lg text-[#111827] mt-4 mb-3">{step.title}</h3>
+                <p className="text-[#6B7280] text-sm">{step.description}</p>
               </div>
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-luxury-gold" />
+                <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-[#C8A97E]" />
               )}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Target, Heart, Award, Users } from 'lucide-react';
 import aboutImages from '@/lib/images';
@@ -36,12 +35,7 @@ export default function AboutStory() {
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
+          <div className="relative animate-slideUp">
             <div className="relative h-[400px] sm:h-[500px] rounded-none overflow-hidden shadow-2xl">
               <Image
                 src={aboutImage}
@@ -49,59 +43,42 @@ export default function AboutStory() {
                 fill
                 className="object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-luxury-dark/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111827]/40 to-transparent" />
             </div>
             {/* Floating card */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="absolute -bottom-8 -right-8 bg-luxury-gold text-white p-8 shadow-2xl"
-            >
+            <div className="absolute -bottom-8 -right-8 bg-[#C8A97E] text-white p-8 shadow-2xl animate-scaleIn" style={{ animationDelay: '0.3s' }}>
               <p className="font-outfit text-4xl font-bold">10+</p>
               <p className="text-sm tracking-wide uppercase">Years of Excellence</p>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="gold-line mb-6" />
-            <span className="inline-block text-luxury-gold font-semibold text-sm tracking-wider uppercase mb-4">
+          <div className="animate-slideUp" style={{ animationDelay: '0.2s' }}>
+            <div className="w-16 h-0.5 bg-[#C8A97E] mb-6" />
+            <span className="inline-block text-[#C8A97E] font-semibold text-sm tracking-wider uppercase mb-4">
               Our Story
             </span>
-            <h2 className="section-heading mb-6">
+            <h2 className="font-outfit text-4xl lg:text-5xl font-bold text-[#111827] leading-tight mb-6">
               The Art of <span className="text-gradient-luxury">Fine Living</span>
             </h2>
-            <p className="text-text-muted text-lg mb-6 leading-relaxed">
+            <p className="text-[#6B7280] text-lg mb-6 leading-relaxed">
               Shams & Sons Co. began in 2014 with a simple vision: to bring world-class interior design to Mumbai at accessible prices. What started as a small carpentry workshop has grown into one of the city&apos;s most trusted interior design firms.
             </p>
-            <p className="text-text-muted text-lg mb-8 leading-relaxed">
+            <p className="text-[#6B7280] text-lg mb-8 leading-relaxed">
               Today, we take pride in having transformed over 500 homes, offices, and commercial spaces. Our commitment to quality, transparency, and customer satisfaction remains unwavering.
             </p>
 
             {/* Values */}
-            <div className="grid sm:grid-cols-2 gap-6">
-              {values.map((value, index) => (
-                <motion.div
-                  key={value.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-cream p-5"
-                >
-                  <value.icon className="w-8 h-8 text-luxury-gold mb-3" />
-                  <h3 className="font-outfit font-semibold text-luxury-dark mb-2">{value.title}</h3>
-                  <p className="text-text-muted text-sm">{value.description}</p>
-                </motion.div>
+            <div className="grid sm:grid-cols-2 gap-6 stagger-children">
+              {values.map((value) => (
+                <div key={value.title} className="bg-[#F5F0E8] p-5">
+                  <value.icon className="w-8 h-8 text-[#C8A97E] mb-3" />
+                  <h3 className="font-outfit font-semibold text-[#111827] mb-2">{value.title}</h3>
+                  <p className="text-[#6B7280] text-sm">{value.description}</p>
+                </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

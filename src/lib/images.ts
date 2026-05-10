@@ -1,56 +1,57 @@
 import { StaticImageData } from 'next/image';
 
-// Image mapping for Shams & Sons Co.
-// Auto-detects images from src/img directory
-
 // Import all images from src/img
-const imageFiles = {
-  img1: require('@/img/WhatsApp Image 2026-05-10 at 12.54.41.jpeg'),
-  img2: require('@/img/WhatsApp Image 2026-05-10 at 12.54.42.jpeg'),
-  img3: require('@/img/WhatsApp Image 2026-05-10 at 12.54.44.jpeg'),
-  img4: require('@/img/WhatsApp Image 2026-05-10 at 12.54.44 (1).jpeg'),
-  img5: require('@/img/WhatsApp Image 2026-05-10 at 12.54.44 (2).jpeg'),
-  img6: require('@/img/WhatsApp Image 2026-05-10 at 12.54.45.jpeg'),
-  img7: require('@/img/WhatsApp Image 2026-05-10 at 12.54.45 (1).jpeg'),
-  img8: require('@/img/WhatsApp Image 2026-05-10 at 12.54.45 (2).jpeg'),
-  img9: require('@/img/WhatsApp Image 2026-05-10 at 12.54.46.jpeg'),
-  img10: require('@/img/WhatsApp Image 2026-05-10 at 12.54.46 (1).jpeg'),
-  img11: require('@/img/WhatsApp Image 2026-05-10 at 12.54.47.jpeg'),
-  img12: require('@/img/WhatsApp Image 2026-05-10 at 12.54.48.jpeg'),
-  img13: require('@/img/WhatsApp Image 2026-05-10 at 12.54.48 (1).jpeg'),
-  img14: require('@/img/WhatsApp Image 2026-05-10 at 12.54.49.jpeg'),
-  img15: require('@/img/WhatsApp Image 2026-05-10 at 12.54.50.jpeg'),
-  img16: require('@/img/WhatsApp Image 2026-05-10 at 12.54.50 (1).jpeg'),
-  img17: require('@/img/WhatsApp Image 2026-05-10 at 12.54.51.jpeg'),
-  img18: require('@/img/WhatsApp Image 2026-05-10 at 12.54.51 (1).jpeg'),
-  img19: require('@/img/WhatsApp Image 2026-05-10 at 12.54.52.jpeg'),
-  img20: require('@/img/WhatsApp Image 2026-05-10 at 12.54.54.jpeg'),
-  img21: require('@/img/WhatsApp Image 2026-05-10 at 12.54.54 (1).jpeg'),
-  img22: require('@/img/WhatsApp Image 2026-05-10 at 12.54.54 (2).jpeg'),
-  img23: require('@/img/WhatsApp Image 2026-05-10 at 12.54.57.jpeg'),
-  img24: require('@/img/WhatsApp Image 2026-05-10 at 12.54.57 (1).jpeg'),
-  img25: require('@/img/WhatsApp Image 2026-05-10 at 12.54.57 (2).jpeg'),
-  img26: require('@/img/WhatsApp Image 2026-05-10 at 12.54.58.jpeg'),
-  img27: require('@/img/WhatsApp Image 2026-05-10 at 12.54.58 (1).jpeg'),
-  img28: require('@/img/WhatsApp Image 2026-05-10 at 12.54.58 (2).jpeg'),
-  img29: require('@/img/WhatsApp Image 2026-05-10 at 12.54.59.jpeg'),
-  img30: require('@/img/WhatsApp Image 2026-05-10 at 12.54.59 (1).jpeg'),
-  img31: require('@/img/WhatsApp Image 2026-05-10 at 12.55.00.jpeg'),
-  img32: require('@/img/WhatsApp Image 2026-05-10 at 12.55.00 (1).jpeg'),
-  img33: require('@/img/WhatsApp Image 2026-05-10 at 12.55.01.jpeg'),
-  img34: require('@/img/WhatsApp Image 2026-05-10 at 12.55.02.jpeg'),
-  img35: require('@/img/WhatsApp Image 2026-05-10 at 12.55.02 (1).jpeg'),
-  img36: require('@/img/WhatsApp Image 2026-05-10 at 12.55.03.jpeg'),
-  img37: require('@/img/WhatsApp Image 2026-05-10 at 12.55.03 (1).jpeg'),
-  img38: require('@/img/WhatsApp Image 2026-05-10 at 12.55.04.jpeg'),
-  img39: require('@/img/WhatsApp Image 2026-05-10 at 12.55.04 (1).jpeg'),
-  img40: require('@/img/WhatsApp Image 2026-05-10 at 12.55.05.jpeg'),
-  img41: require('@/img/WhatsApp Image 2026-05-10 at 12.55.06.jpeg'),
-  img42: require('@/img/WhatsApp Image 2026-05-10 at 12.55.06 (1).jpeg'),
-};
+import img1 from '@/img/WhatsApp Image 2026-05-10 at 12.54.41.jpeg';
+import img2 from '@/img/WhatsApp Image 2026-05-10 at 12.54.42.jpeg';
+import img3 from '@/img/WhatsApp Image 2026-05-10 at 12.54.44.jpeg';
+import img4 from '@/img/WhatsApp Image 2026-05-10 at 12.54.44 (1).jpeg';
+import img5 from '@/img/WhatsApp Image 2026-05-10 at 12.54.44 (2).jpeg';
+import img6 from '@/img/WhatsApp Image 2026-05-10 at 12.54.45.jpeg';
+import img7 from '@/img/WhatsApp Image 2026-05-10 at 12.54.45 (1).jpeg';
+import img8 from '@/img/WhatsApp Image 2026-05-10 at 12.54.45 (2).jpeg';
+import img9 from '@/img/WhatsApp Image 2026-05-10 at 12.54.46.jpeg';
+import img10 from '@/img/WhatsApp Image 2026-05-10 at 12.54.46 (1).jpeg';
+import img11 from '@/img/WhatsApp Image 2026-05-10 at 12.54.47.jpeg';
+import img12 from '@/img/WhatsApp Image 2026-05-10 at 12.54.48.jpeg';
+import img13 from '@/img/WhatsApp Image 2026-05-10 at 12.54.48 (1).jpeg';
+import img14 from '@/img/WhatsApp Image 2026-05-10 at 12.54.49.jpeg';
+import img15 from '@/img/WhatsApp Image 2026-05-10 at 12.54.50.jpeg';
+import img16 from '@/img/WhatsApp Image 2026-05-10 at 12.54.50 (1).jpeg';
+import img17 from '@/img/WhatsApp Image 2026-05-10 at 12.54.51.jpeg';
+import img18 from '@/img/WhatsApp Image 2026-05-10 at 12.54.51 (1).jpeg';
+import img19 from '@/img/WhatsApp Image 2026-05-10 at 12.54.52.jpeg';
+import img20 from '@/img/WhatsApp Image 2026-05-10 at 12.54.54.jpeg';
+import img21 from '@/img/WhatsApp Image 2026-05-10 at 12.54.54 (1).jpeg';
+import img22 from '@/img/WhatsApp Image 2026-05-10 at 12.54.54 (2).jpeg';
+import img23 from '@/img/WhatsApp Image 2026-05-10 at 12.54.57.jpeg';
+import img24 from '@/img/WhatsApp Image 2026-05-10 at 12.54.57 (1).jpeg';
+import img25 from '@/img/WhatsApp Image 2026-05-10 at 12.54.57 (2).jpeg';
+import img26 from '@/img/WhatsApp Image 2026-05-10 at 12.54.58.jpeg';
+import img27 from '@/img/WhatsApp Image 2026-05-10 at 12.54.58 (1).jpeg';
+import img28 from '@/img/WhatsApp Image 2026-05-10 at 12.54.58 (2).jpeg';
+import img29 from '@/img/WhatsApp Image 2026-05-10 at 12.54.59.jpeg';
+import img30 from '@/img/WhatsApp Image 2026-05-10 at 12.54.59 (1).jpeg';
+import img31 from '@/img/WhatsApp Image 2026-05-10 at 12.55.00.jpeg';
+import img32 from '@/img/WhatsApp Image 2026-05-10 at 12.55.00 (1).jpeg';
+import img33 from '@/img/WhatsApp Image 2026-05-10 at 12.55.01.jpeg';
+import img34 from '@/img/WhatsApp Image 2026-05-10 at 12.55.02.jpeg';
+import img35 from '@/img/WhatsApp Image 2026-05-10 at 12.55.02 (1).jpeg';
+import img36 from '@/img/WhatsApp Image 2026-05-10 at 12.55.03.jpeg';
+import img37 from '@/img/WhatsApp Image 2026-05-10 at 12.55.03 (1).jpeg';
+import img38 from '@/img/WhatsApp Image 2026-05-10 at 12.55.04.jpeg';
+import img39 from '@/img/WhatsApp Image 2026-05-10 at 12.55.04 (1).jpeg';
+import img40 from '@/img/WhatsApp Image 2026-05-10 at 12.55.05.jpeg';
+import img41 from '@/img/WhatsApp Image 2026-05-10 at 12.55.06.jpeg';
+import img42 from '@/img/WhatsApp Image 2026-05-10 at 12.55.06 (1).jpeg';
 
-// Convert to array for easier access
-const allImages = Object.values(imageFiles);
+// Array of all images
+const allImages: StaticImageData[] = [
+  img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
+  img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
+  img21, img22, img23, img24, img25, img26, img27, img28, img29, img30,
+  img31, img32, img33, img34, img35, img36, img37, img38, img39, img40,
+  img41, img42
+];
 
 // Categorize images for different sections
 export const heroImages = [
