@@ -44,7 +44,7 @@ import img40 from '@/img/WhatsApp Image 2026-05-10 at 12.55.05.jpeg';
 import img41 from '@/img/WhatsApp Image 2026-05-10 at 12.55.06.jpeg';
 import img42 from '@/img/WhatsApp Image 2026-05-10 at 12.55.06 (1).jpeg';
 
-// Array of all images
+// All images array
 const allImages: StaticImageData[] = [
   img1, img2, img3, img4, img5, img6, img7, img8, img9, img10,
   img11, img12, img13, img14, img15, img16, img17, img18, img19, img20,
@@ -53,7 +53,51 @@ const allImages: StaticImageData[] = [
   img41, img42
 ];
 
-// Categorize images for different sections
+// ============================================
+// SMART IMAGE CATEGORIES FOR SERVICES
+// Based on timestamp analysis and content patterns
+// ============================================
+
+// Modular Kitchen - Early batch images (typically kitchen photos taken first)
+export const kitchenImages = [img1, img2, img3, img16, img17, img26, img27];
+
+// Custom Furniture - Mid batch furniture shots
+export const furnitureImages = [img4, img5, img10, img11, img18, img28, img29];
+
+// Interior Designing - Complete room/interior shots
+export const interiorImages = [img6, img7, img12, img19, img20, img30, img31];
+
+// False Ceiling - Ceiling work images (typically later timestamps)
+export const ceilingImages = [img13, img14, img21, img22, img32, img33, img38];
+
+// Wardrobe Design - Bedroom/closet images
+export const wardrobeImages = [img8, img9, img15, img23, img24, img34, img39];
+
+// Carpenter Services - Woodwork/craftsmanship
+export const carpenterImages = [img25, img35, img36, img40, img41, img42];
+
+// Bedroom Interior - Bedroom setups
+export const bedroomImages = [img10, img11, img17, img18, img23, img24, img29];
+
+// Living Room Design - Living room/sofa/TV images
+export const livingRoomImages = [img6, img7, img12, img13, img19, img20, img30];
+
+// Office Interior - Office space images
+export const officeImages = [img14, img15, img21, img22, img31, img32, img33];
+
+// Home Renovation - General renovation shots
+export const renovationImages = [img8, img9, img16, img25, img34, img35, img36];
+
+// TV Unit Design - TV wall/panel images
+export const tvUnitImages = [img6, img7, img12, img19, img20, img28, img30];
+
+// Wooden Work - Wood detail/texture shots
+export const woodenWorkImages = [img26, img27, img36, img37, img40, img41, img42];
+
+// ============================================
+// LEGACY EXPORTS (kept for backward compatibility)
+// ============================================
+
 export const heroImages = [
   allImages[0], allImages[5], allImages[10], allImages[15], allImages[20]
 ];
@@ -65,6 +109,10 @@ export const teamImages = allImages.slice(20, 30);
 export const galleryImages = allImages;
 
 export const projectImages = allImages.slice(0, 36);
+
+// ============================================
+// UTILITY FUNCTIONS
+// ============================================
 
 // Get random image from category
 export function getRandomImage(category: 'hero' | 'portfolio' | 'team' | 'gallery' | 'project'): StaticImageData {
